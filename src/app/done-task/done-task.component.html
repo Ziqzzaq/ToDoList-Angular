@@ -1,0 +1,13 @@
+<h2>Task done</h2>
+  <p>Done tasks: {{doneTasksList.length}}</p>
+  <ng-container *ngIf="doneTasksList.length>0; else noDoneTasks">
+    <ul>
+      <li *ngFor="let task of doneTasksList">
+        {{task}}
+        <button type="button" class="btn btn-warning" (click)="restore(task)">Restore</button>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noDoneTasks>
+    <p>You did not do anything!</p>
+  </ng-template>

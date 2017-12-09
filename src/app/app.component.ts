@@ -10,25 +10,22 @@ import {Observable} from 'rxjs/Observable';
 export class AppComponent implements OnInit {
 
     public constructor(protected storage: AsyncLocalStorage) {}
-
-  newTask: string;
   tasksList: Array<string> = [];
   doneTasksList: Array<string> = [];
-  add() {
-    this.tasksList.push(this.newTask);
-    this.newTask = '';
+  add(task: string) {
+    this.tasksList.push(task);
     this.saveTasksList();
   }
-  remove(task) {
+  remove(task: string) {
     this.tasksList = this.tasksList.filter(e => e !== task);
     this.saveTasksList();
   }
-  done(task) {
+  done(task: string) {
     this.doneTasksList.push(task);
     this.remove(task);
     this.saveTasksList();
   }
-  restore(task) {
+  restore(task: string) {
       this.doneTasksList = this.doneTasksList.filter(e => e !== task);
       this.tasksList.push(task);
       this.saveTasksList();
