@@ -1,6 +1,3 @@
-ul{
-    list-style: none;
-}
-li{
-    margin-bottom: 10px;
-}
+ul{list-style: none;}
+li{margin-bottom: 10px;}
+.row{margin: 0;}
