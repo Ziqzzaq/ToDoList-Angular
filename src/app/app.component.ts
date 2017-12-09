@@ -8,8 +8,7 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-    public constructor(protected storage: AsyncLocalStorage) {}
+  public constructor(protected storage: AsyncLocalStorage) {}
   tasksList: Array<string> = [];
   doneTasksList: Array<string> = [];
   add(task: string) {
@@ -28,6 +27,10 @@ export class AppComponent implements OnInit {
   restore(task: string) {
       this.doneTasksList = this.doneTasksList.filter(e => e !== task);
       this.tasksList.push(task);
+      this.saveTasksList();
+  }
+  clear() {
+      this.tasksList = [];
       this.saveTasksList();
   }
   saveTasksList() {

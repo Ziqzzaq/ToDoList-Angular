@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'app-add-task',
@@ -10,6 +10,8 @@ export class AddTaskComponent implements OnInit {
   newTask: string;
   @Output()
   emitTask = new EventEmitter<string>();
+  @Input()
+  tasksList: Array<string> = [];
   constructor() { }
 
   ngOnInit() {
