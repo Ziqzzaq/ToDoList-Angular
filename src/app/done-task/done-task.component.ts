@@ -10,6 +10,8 @@ export class DoneTaskComponent implements OnInit {
   doneTasksList: Array<string> = [];
   @Output()
   emitRestore = new EventEmitter<string>();
+  @Output()
+  emitClearDoneTasksList = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -18,4 +20,9 @@ export class DoneTaskComponent implements OnInit {
   restore(task: string) {
     this.emitRestore.emit(task);
   }
+  clearDoneTasksList(doneTasksList) {
+    doneTasksList = [];
+    this.emitClearDoneTasksList.emit(doneTasksList);
+  }
+
 }

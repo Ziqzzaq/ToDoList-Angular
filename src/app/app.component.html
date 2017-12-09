@@ -4,9 +4,8 @@
     <app-add-task class="col-md-12 text-center" (emitTask)="add($event)"></app-add-task>
   </div>
   <div class="row text-center">
-    <app-todo-task class="col-md-6" [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)"></app-todo-task>
-    <app-done-task class="col-md-6" [doneTasksList]="doneTasksList" (emitRestore)="restore($event)"></app-done-task>
+    <app-todo-task class="col-md-6" [tasksList]="tasksList" (emitDone)="done($event)" (emitRemove)="remove($event)" (emitClearTasksList)="clearTasksList($event)"></app-todo-task>
+    <app-done-task class="col-md-6" [doneTasksList]="doneTasksList" (emitRestore)="restore($event)" (emitClearDoneTasksList)="clearDoneTasksList($event)"></app-done-task>
 
   </div>
-  <button type="button" class="btn btn-info" (click)="clear()">Clear list</button>
 </div>

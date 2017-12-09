@@ -12,6 +12,8 @@ export class TodoTaskComponent implements OnInit {
   emitDone = new EventEmitter<string>();
   @Output()
   emitRemove = new EventEmitter<string>();
+  @Output()
+  emitClearTasksList = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +23,9 @@ export class TodoTaskComponent implements OnInit {
   }
   done(task: string) {
     this.emitDone.emit(task);
+  }
+  clearTasksList(tasksList) {
+    tasksList = [];
+    this.emitClearTasksList.emit(tasksList);
   }
 }

@@ -29,8 +29,12 @@ export class AppComponent implements OnInit {
       this.tasksList.push(task);
       this.saveTasksList();
   }
-  clear() {
-      this.tasksList = [];
+    clearDoneTasksList(doneTasksList: Array<string>) {
+      this.doneTasksList = doneTasksList;
+      this.saveTasksList();
+  }
+  clearTasksList(tasksList: Array<string>) {
+      this.tasksList = tasksList;
       this.saveTasksList();
   }
   saveTasksList() {
